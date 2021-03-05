@@ -1,4 +1,4 @@
 /node_modules
 .env
 .DS_Store
-/public/css/tailwind.css
+tailwind.css
