@@ -19,6 +19,9 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
 .catch((err)=>{console.log(err)})
 
 //middleware
+app.set('views', __dirname + '/views');
+app.set('view engine', "ejs")
+app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 app.use(cookieSession({
@@ -52,7 +55,7 @@ app.get("/protected", isLoggedIn, (req, res)=>{
 app.get("/", (req, res) =>{
 
 
-    res.send("hello")
+    res.render('home')
     }
 )
 
