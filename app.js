@@ -54,11 +54,13 @@ app.get("/protected", isLoggedIn, (req, res)=>{
 
 //home route
 app.get("/", (req, res) =>{
-
-
     res.render('home')
-    }
-)
+})
+
+//route to main dashboard
+app.get("/dashboard", isLoggedIn, (req, res)=>{
+    res.render('dashboard')
+})
 
 //route to go if auth fails
 app.get("/failed", ((req, res) => {
