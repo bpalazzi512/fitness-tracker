@@ -10,6 +10,7 @@ require('dotenv').config()
 
 //connect to mongodb
 const dbURI = process.env.DB_URI;
+ 
 
 //options in second argument prevent deprecation errors
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
