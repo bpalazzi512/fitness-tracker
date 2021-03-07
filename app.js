@@ -7,6 +7,9 @@ require("./passport-setup")
 const User = require('./models/user')
 const mongoose = require('mongoose')
 require('dotenv').config()
+const ejs = require('ejs')
+ejs.openDelimiter = '['
+ejs.closeDelimiter = ']'
 
 //connect to mongodb
 const dbURI = process.env.DB_URI;
