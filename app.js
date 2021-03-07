@@ -17,7 +17,7 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
 .then((result) =>{
     console.log("connected to DB") 
 })
-.catch((err)=>{console.log(err)}) 
+.catch((err)=>{console.log(err)})
 
 //middleware
 app.set('views', __dirname + '/views');
