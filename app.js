@@ -15,7 +15,7 @@ const dbURI = process.env.DB_URI;
 //options in second argument prevent deprecation errors
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
 .then((result) =>{
-    console.log("connected to DB")
+    console.log("connected to DB") 
 })
 .catch((err)=>{console.log(err)}) 
 
