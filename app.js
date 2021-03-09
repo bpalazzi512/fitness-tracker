@@ -56,12 +56,16 @@ app.get("/protected", isLoggedIn, (req, res)=>{
 
 //home route
 app.get("/", (req, res) =>{
-    res.render('home')
+    res.render('home', {user: req.user})
 })
 
 //route to main dashboard
 app.get("/dashboard", isLoggedIn, (req, res)=>{
-    res.render('dashboard')
+    res.render('dashboard', {user: req.user})
+})
+
+app.get("/login",  (req, res)=>{
+    res.render('login')
 })
 
 //route to go if auth fails
@@ -85,7 +89,7 @@ app.get('/google',
 app.get( '/google/callback',
     passport.authenticate( 'google', {
         failureRedirect: '/failed',
-        successRedirect: '/success'
+        successRedirect: '/'
     })
 );
 

@@ -1,9 +1,20 @@
-<div class="flex w-screen justify-between border border-t-0 border-l-0 border-r-0 border-gray-200 p-4 shadow-sm bg-gray-50">
+<% if(locals.user){%>
+<div class="flex w-screen justify-between items-center border border-t-0 border-l-0 border-r-0 border-gray-200 p-2 shadow-sm bg-gray-50 ml-2">
+<%}else{%>
+<div class="flex w-screen justify-between items-center border border-t-0 border-l-0 border-r-0 border-gray-200 p-4 shadow-sm bg-gray-50">
+<%}%>
   <h1>Glowup</h1>
   <nav>
-    <ul class="flex ">
-      <li><a href="/dashboard" class="m-20 hover:text-blue-600 hover:font-bold border border-l-0 border-r-0 border-t-0 pb-1 border-transparent hover:border-blue-600">Dashboard</a></li>
-      <li><a href="/google" class="mr-16 hover:text-blue-600 hover:font-bold border border-l-0 border-r-0 border-t-0 pb-1 border-transparent hover:border-blue-600">Login</a></li>
+    <ul class="flex items-center ">
+      <li><a href="/dashboard" class="m-8 hover:text-blue-600 hover:font-bold border border-l-0 border-r-0 border-t-0 pb-1 border-transparent hover:border-blue-600">Dashboard</a></li>
+      
+      <% if(locals.user){%>
+      <li><h2 class="mr-8 border border-r-0 border-t-0 border-b-0 pl-8 border-black p-2">Hello, <%= user.fname %></h2></li>
+      <li><a href="/logout" class="text-red-500 mr-8 border border-l-0 border-r-0 border-t-0 pb-1 border-transparent hover:border-red-500">Logout</a></li>
+      <%} else{%>
+        <li><a href="/login" class="mr-8 hover:text-blue-600 hover:font-bold border border-l-0 border-r-0 border-t-0 pb-1 border-transparent hover:border-blue-600">Login</a></li>
+      <%}%>
+
     </ul>
   </nav>
 
